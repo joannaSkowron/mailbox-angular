@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MailComposeComponent } from './components/mail-compose/mail-compose.component';
-import { MailListComponent } from './mail-list/mail-list.component';
+import { MailListComponent } from './components/mail-list/mail-list.component';
 import { MailViewComponent } from './components/mail-view/mail-view.component';
 import { MailComponent } from './components/mail/mail.component';
 
