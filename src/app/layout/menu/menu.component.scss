@@ -1,0 +1,21 @@
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  height: 100%;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+
+  &__item {
+    padding: 0 25px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
