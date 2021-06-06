@@ -1,1 +1,18 @@
-<p>mail-view works!</p>
+<app-spinner *ngIf="isLoading$ | async; else mail"></app-spinner>
+
+<ng-template #mail>
+  <div *ngIf="mail$ | async as mail" class="mail-view-container">
+    <h1 class="mail-view-title">{{ mail.title }}</h1>
+
+    <header class="mail-view-header">
+      <div class="mail-view-header__from">From: {{ mail.from.address }}</div>
+      <div class="mail-view-header__to">To: {{ getToAddresses(mail) }}</div>
+      <div class="mail-view-header__toCC">CC: {{ getCCAddresses(mail) }}</div>
+      <div class="mail-view-header__date">Date: {{ mail.date | date:'medium'}}</div>
+    </header>
+
+    <main class="mail-view-body-container">
+      <div [innerHTML]="mail.content | safeHtml" class="mail-view-body"></div>
+    </main>
+  </div>
+</ng-template>

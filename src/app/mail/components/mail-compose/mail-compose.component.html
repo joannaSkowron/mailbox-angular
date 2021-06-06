@@ -1,1 +1,96 @@
-<p>mail-compose works!</p>
+<div class="form-container">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="handleSubmit(false)"
+    class="form"
+    autocomplete="off"
+  >
+    <div class="form-control">
+      <app-input
+        type="text"
+        id="to"
+        placeholder="To"
+        (onChange)="handleChange($event, 'to')"
+      ></app-input>
+      <span
+        *ngIf="!form.get('to')?.valid && form.get('to')?.touched"
+        class="error-msg"
+        >Please enter valid data</span
+      >
+    </div>
+
+    <div class="form-control">
+      <app-input
+        type="text"
+        id="cc"
+        placeholder="CC"
+        (onChange)="handleChange($event, 'cc')"
+      ></app-input>
+      <span
+        *ngIf="!form.get('cc')?.valid && form.get('cc')?.touched"
+        class="error-msg"
+        >Please enter valid data</span
+      >
+    </div>
+
+    <div class="form-control">
+      <app-input
+        type="text"
+        id="bcc"
+        placeholder="BCC"
+        (onChange)="handleChange($event, 'bcc')"
+      ></app-input>
+      <span
+        *ngIf="!form.get('bcc')?.valid && form.get('bcc')?.touched"
+        class="error-msg"
+        >Please enter valid data</span
+      >
+    </div>
+
+    <div class="form-control">
+      <app-input
+        type="text"
+        id="title"
+        placeholder="Subject"
+        (onChange)="handleChange($event, 'title')"
+      ></app-input>
+      <span
+        *ngIf="!form.get('title')?.valid && form.get('title')?.touched"
+        class="error-msg"
+        >Please enter valid data</span
+      >
+    </div>
+
+    <div class="form-control-content">
+      <editor
+        [apiKey]="tinyApiKey"
+        [init]="{ plugins: 'link table' }"
+        formControlName="content"
+        class="form-editor"
+      ></editor>
+    </div>
+
+    <div class="form-buttons">
+      <app-button
+        type="submit"
+        mode="primary"
+        caption="Send"
+        class="button"
+      ></app-button>
+      <app-button
+        type="button"
+        mode="secondary"
+        caption="Save as draft"
+        class="button"
+        (onClick)="handleSubmit(true)"
+      ></app-button>
+      <app-button
+        type="button"
+        mode="secondary"
+        caption="Cancel"
+        class="button"
+        (onClick)="handleCancel()"
+      ></app-button>
+    </div>
+  </form>
+</div>

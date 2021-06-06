@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Mail } from '../../mail.model';
 
 @Component({
   selector: 'app-mail-list-item',
@@ -6,11 +7,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./mail-list-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MailListItemComponent implements OnInit {
+export class MailListItemComponent {
+@Input() mail!: Mail;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

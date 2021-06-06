@@ -1,2 +1,43 @@
-.container {
+.list-container {
+  width: 100%;
+  height: 100%;
+}
+
+.header-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  height: 40px;
+  font-weight: 600;
+
+  &__from {
+    width: 20%;
+  }
+  &__title {
+    width: 30%;
+  }
+  &__content {
+    width: 30%;
+  }
+  &__date {
+    width: 20%;
+    text-align: end;
+  }
+}
+
+.list-body {
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow: auto;
+}
+
+.empty-list-msg {
+  padding: 20px 10px;
+  font-size: 25px;
+  font-weight: 200;
 }

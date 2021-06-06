@@ -16,27 +16,27 @@ export class MailNavComponent {
   readonly navData: NavData[] = [
     {
       name: 'Inbox',
-      path: 'inbox',
+      path: '/mail/inbox',
       icon: '',
     },
     {
       name: 'Sent',
-      path: 'sent',
+      path: '/mail/outbox',
       icon: '',
     },
     {
       name: 'Drafts',
-      path: 'drafts',
+      path: '/mail/draft',
       icon: '',
     },
     {
       name: 'Trash',
-      path: 'trash',
+      path: '/mail/trash',
       icon: '',
     },
     {
       name: 'Spam',
-      path: 'spam',
+      path: '/mail/spam',
       icon: '',
     },
   ];

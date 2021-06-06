@@ -1,1 +1,6 @@
-<p>mail-list-item works!</p>
+<a [routerLink]="[mail.id]" class="item">
+  <div class="item__from item-cell">{{ mail.from.address }}</div>
+  <div class="item__title item-cell">{{ mail.title }}</div>
+  <div class="item__content item-cell" [innerText]="mail.content"></div>
+  <div class="item__date item-cell">{{ mail.date | date: 'd/M/yy, h:mm a' }}</div>
+</a>

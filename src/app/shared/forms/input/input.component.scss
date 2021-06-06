@@ -1,0 +1,15 @@
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background-color: var(--color2-01);
+  color: var(--color2-08);
+  font-size: 12px;
+  border-radius: 7px;
+  transition: all 0.3s ease 0s;
+
+  &:focus {
+    background-color: var(--color1-08);
+  }
+}

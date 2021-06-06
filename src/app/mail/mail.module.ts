@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MailRoutingModule } from './mail-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
+ import { EditorModule } from '@tinymce/tinymce-angular';
+
 import { MailNavComponent } from './components/mail-nav/mail-nav.component';
 import { MailListComponent } from './components/mail-list/mail-list.component';
 import { MailViewComponent } from './components/mail-view/mail-view.component';
@@ -25,7 +27,8 @@ import { MailListItemComponent } from './components/mail-list-item/mail-list-ite
     CommonModule,
     MailRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    EditorModule,
   ]
 })
 export class MailModule { }

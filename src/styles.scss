@@ -1,18 +1,29 @@
 //COLORS
-$color1: white;
-$color1-02: rgba(256, 256, 256, 0.2);
-$color1-04: rgba(256, 256, 256, 0.4);
-$color1-05: rgba(256, 256, 256, 0.5);
-$color1-06: rgba(256, 256, 256, 0.6);
-$color1-08: rgba(256, 256, 256, 0.8);
+:root {
+  --color1: white;
+  --color1-02: rgba(256, 256, 256, 0.2);
+  --color1-04: rgba(256, 256, 256, 0.4);
+  --color1-05: rgba(256, 256, 256, 0.5);
+  --color1-06: rgba(256, 256, 256, 0.6);
+  --color1-08: rgba(256, 256, 256, 0.8);
 
-$color2: black;
-$color2-01: rgba(0, 0, 0, 0.1);
-$color2-02: rgba(0, 0, 0, 0.2);
-$color2-04: rgba(0, 0, 0, 0.4);
-$color2-05: rgba(0, 0, 0, 0.5);
-$color2-06: rgba(0, 0, 0, 0.6);
-$color2-08: rgba(0, 0, 0, 0.8);
+  --color2: black;
+  --color2-01: rgba(0, 0, 0, 0.1);
+  --color2-02: rgba(0, 0, 0, 0.2);
+  --color2-04: rgba(0, 0, 0, 0.4);
+  --color2-05: rgba(0, 0, 0, 0.5);
+  --color2-06: rgba(0, 0, 0, 0.6);
+  --color2-08: rgba(0, 0, 0, 0.8);
+
+  --color4: rgb(253, 238, 188); /*highlighted element */
+  --color5: rgba(255, 90, 155, 0.8); /*alert element */
+
+  /* Buttons */
+  --primary: rgba(0, 0, 0, 0.35);
+  --primary-hover: rgba(0, 0, 0, 0.45);
+  --secondary: rgba(0, 0, 0, 0.15);
+  --secondary-hover: rgba(0, 0, 0, 0.25);
+}
 
 * {
   box-sizing: border-box;
@@ -25,11 +36,51 @@ body {
   margin: 0;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 14px;
-  
 }
 
 body a {
   text-decoration: none;
   cursor: pointer;
-  color: $color2-08;
+  color: var(--color2-08);
+}
+
+/* Custom scrollbar: */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color1-02);
+  border-radius: 6px;
+  margin: 5px 0 5px 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color2-02);
+  border-radius: 6px;
+  margin: 5px 0 5px 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color2-06);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color1-02);
+}
+
+//TINY MCE TEXT EDITOR
+
+.tox-tinymce {
+  height: 100% !important;
+  border: none !important;
+  border-radius: 7px !important;
+  background-color: transparent !important;
+  font-family: Montserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 12px !important;
+}
+
+.tox-editor-container {
+  background-color: transparent !important;
 }

@@ -1,3 +1,18 @@
-<div class="container">
-  <p>mail list</p>
-</div>
+<app-spinner *ngIf="isLoading$ | async; else mailsList"></app-spinner>
+<ng-template #mailsList>
+  <div *ngIf="mails$ | async as mails" class="list-container">
+    <div class="header">
+      <div class="header__from header-item">From</div>
+      <div class="header__title header-item">Title</div>
+      <div class="header__content header-item">Content</div>
+      <div class="header__date header-item">Date</div>
+    </div>
+    <div class="list-body">
+      <p *ngIf="mails.length === 0" class="empty-list-msg">This list is empty</p>
+      <app-mail-list-item
+        *ngFor="let mail of mails"
+        [mail]="mail"
+      ></app-mail-list-item>
+    </div>
+  </div>
+</ng-template>

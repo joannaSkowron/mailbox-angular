@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
+import { RouterOutletComponent } from '../shared/router-outlet/router-outlet.component';
 import { MailComposeComponent } from './components/mail-compose/mail-compose.component';
 import { MailListComponent } from './components/mail-list/mail-list.component';
 import { MailViewComponent } from './components/mail-view/mail-view.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        pathMatch: 'full',
         redirectTo: 'inbox',
       },
       {
@@ -19,12 +21,18 @@ const routes: Routes = [
         component: MailComposeComponent,
       },
       {
-        path: 'view/:id',
-        component: MailViewComponent,
-      },
-      {
         path: ':folder',
-        component: MailListComponent,
+        component: RouterOutletComponent,
+        children: [
+          {
+            path: '',
+            component: MailListComponent,
+          },
+          {
+            path: ':id',
+            component: MailViewComponent,
+          },
+        ],
       },
     ],
   },
