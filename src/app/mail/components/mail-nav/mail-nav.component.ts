@@ -17,27 +17,27 @@ export class MailNavComponent {
     {
       name: 'Inbox',
       path: '/mail/inbox',
-      icon: '',
+      icon: 'far fa-envelope-open',
     },
     {
       name: 'Sent',
       path: '/mail/outbox',
-      icon: '',
+      icon: 'far fa-paper-plane',
     },
     {
       name: 'Drafts',
       path: '/mail/draft',
-      icon: '',
+      icon: 'fas fa-pencil-ruler',
     },
     {
       name: 'Trash',
       path: '/mail/trash',
-      icon: '',
+      icon: 'far fa-trash-alt',
     },
     {
       name: 'Spam',
       path: '/mail/spam',
-      icon: '',
+      icon: 'fas fa-ban',
     },
   ];
 }

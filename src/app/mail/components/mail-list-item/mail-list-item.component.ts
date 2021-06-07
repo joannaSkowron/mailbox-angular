@@ -5,10 +5,14 @@ import { Mail } from '../../mail.model';
   selector: 'app-mail-list-item',
   templateUrl: './mail-list-item.component.html',
   styleUrls: ['./mail-list-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MailListItemComponent {
-@Input() mail!: Mail;
+  @Input() mail!: Mail;
 
-  constructor() { }
+  constructor() {}
+
+  extractContent(html: string) {
+    return new DOMParser().parseFromString(html, 'text/html').documentElement.textContent;
+  }
 }

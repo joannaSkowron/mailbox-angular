@@ -1,13 +1,13 @@
 <nav class="nav-container">
-  <a [routerLink]="['/mail/compose']">Compose</a>
+  <app-nav-button
+    link="/mail/compose"
+    iconClass="fas fa-pencil-alt"
+    caption="Compose"
+  >
+  </app-nav-button>
   <ul class="nav-list">
     <li *ngFor="let item of navData" class="nav-list__item">
-      <a
-        [routerLink]="item.path"
-        routerLinkActive="active"
-        class="nav-list__link"
-        >{{ item.name }}</a
-      >
+      <app-nav-list-item [item]="item"></app-nav-list-item>
     </li>
   </ul>
 </nav>

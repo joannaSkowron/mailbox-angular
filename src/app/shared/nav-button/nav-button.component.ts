@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-button',
@@ -6,11 +6,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./nav-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavButtonComponent implements OnInit {
+export class NavButtonComponent {
+  @Input() link!: string;
+  @Input() iconClass!: string;
+  @Input() caption!: string;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
